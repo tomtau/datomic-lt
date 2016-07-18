@@ -1,5 +1,7 @@
 {:+ {:app [(:lt.objs.plugins/load-js "datomic-lt_compiled.js")
           (:lt.objs.plugins/load-css "css/datomic.css")]
 
- :datomic.browser [:lt.plugins.datomic/on-close]
+ :datomic.browser [:lt.plugins.datomic/on-close
+                   :lt.plugins.datomic/submit-query
+                   ]
   }}

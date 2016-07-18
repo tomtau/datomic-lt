@@ -1,15 +1,15 @@
 .datomic-browser {
-  display: flex;
+  display: inline;
   flex-direction: column;
   justify-content: space-between;
   align-content: flex-start;
-  align-items: center;
+  align-items: left;
 }
 
 .datomic-browser .flex-row {
-  display: flex;
+  display: inline;
   flex-direction: row;
-  width: 100%;
+  width: 49%;
   justify-content: space-around;
   align-content: flex-start;
   align-items: flex-start;
@@ -19,6 +19,8 @@ textarea {
     border: none;
     padding: 5px;
     outline: none;
+    width: 49%;
+    height: 50%;
     border-radius: 0px;
     font-size: 10pt;
     color: #f4f4f4;
