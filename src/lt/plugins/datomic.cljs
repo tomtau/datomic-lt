@@ -35,7 +35,7 @@
 (def datomic-result-id "datomic-result")
 
 (defn arg-alias [] (url-encode (str "[{:db/alias \"" (by-id arg-alias-id) "\"}]")))
-(defn query-enc [] (url-encode (by-id datomic-query-id)))
+(defn query-enc [] (url-encode (.getValue @cm-query)))
 
 
 (defn daturl [] (str (by-id rest-url-id) "api/query?q=" (query-enc) "&args=" (arg-alias)))
@@ -80,11 +80,8 @@
           :triggers #{:dquery!}
           :reaction (fn [this]
                       (GET (daturl) (fn [x]
-                                    (dom/setTextContent
-                                      (dom/getElement
-                                        (name datomic-result-id)
-                                      )
-                                      x
+                                    (
+                                      .setValue @cm-result x
                                     )
                                   )
                            )
