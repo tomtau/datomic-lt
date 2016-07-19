@@ -1,0 +1,6 @@
+{:name "datomic-lt"
+ :version "0.0.1"
+ :author "Tomas Tauber"
+ :source "https://github.com/tomtau/datomic"
+ :desc "A plugin for interacting with Datomic"
+ :behaviors "datomic-lt.behaviors"}
