@@ -91,9 +91,18 @@
 
           ))
 
+(def cm-query (atom nil))
+
+(def cm-result (atom nil))
+
 (def browser (object/create ::datomic.browser))
 
 (cmd/command {:command ::datomic.browse
               :desc "Datomic: open browser"
               :exec (fn []
-                      (tabs/add-or-focus! browser))})
+                      (do
+                        (tabs/add-or-focus! browser)
+                        (reset! cm-query (.fromTextArea js/CodeMirror (dom/getElement (name datomic-query-id)) #js {:mode "clojure" :lineNumbers true}))
+                        (reset! cm-result (.fromTextArea js/CodeMirror (dom/getElement (name datomic-result-id)) #js {:mode "clojure" }))
+                        )
+                      )})

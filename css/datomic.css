@@ -15,14 +15,14 @@
   align-items: flex-start;
 }
 
-textarea {
-    border: none;
-    padding: 5px;
-    outline: none;
-    width: 49%;
-    height: 50%;
-    border-radius: 0px;
-    font-size: 10pt;
-    color: #f4f4f4;
-    background: #616161;
+.query-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.query-area .CodeMirror {
+    width: 40%;
 }
